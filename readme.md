@@ -213,14 +213,13 @@ Use the saved `token` to authorize your requests:
 
 ---
 
-## ⚡ Deployment Notes
+## ⚡ Scalability & Deployment Notes
 
-The architecture is designed for scalability and production readiness:
+The current architecture is built with future growth in mind:
 
-- **Modularity**: The structure supports easy addition of new feature modules.
-- **Containerization**: Ready for **Docker** deployment.
-- **Optimization**: Can be enhanced with **Redis** caching for frequently accessed data (e.g., user profiles).
-- **Monitoring**: Supports integration with logging and monitoring tools for production environments.
+- **Modular Design**: The clear separation of concerns makes it easy to transition this monolith into a **Microservices** architecture if necessary.
+- **Performance**: Frequently accessed data (like user profiles or lookup tables) can be easily offloaded to a **Redis Caching** layer to reduce database load and improve response times.
+- **High Availability**: The stateless nature of the JWT authentication allows the application to be deployed across multiple servers behind a **Load Balancer** for horizontal scaling and fault tolerance.
 
 ---
 
