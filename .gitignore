@@ -1,0 +1,56 @@
+# ==========================
+# Node modules
+# ==========================
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# ==========================
+# Environment variables
+# ==========================
+.env
+backend/.env
+frontend/.env
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+*.log.*
+
+# ==========================
+# OS files
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Build outputs
+# ==========================
+backend/dist/
+frontend/build/
+
+# ==========================
+# Sequelize CLI files
+# ==========================
+backend/config/config.json
+
+# ==========================
+# IDE/editor folders
+# ==========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ==========================
+# Mac/Linux temp files
+# ==========================
+*.swp
+*~
+
+# ==========================
+# Misc
+# ==========================
+*.bak

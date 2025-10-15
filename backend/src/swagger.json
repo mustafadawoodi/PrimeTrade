@@ -1,0 +1,85 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Task API",
+    "description": "Task Management API with JWT Auth"
+  },
+  "host": "localhost:5000",
+  "basePath": "/api/v1",
+  "schemes": ["http"],
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "Register new user",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "required": true,
+            "schema": { "$ref": "#/definitions/User" }
+          }
+        ],
+        "responses": { "201": { "description": "User registered" } }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "Login user",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "user",
+            "required": true,
+            "schema": { "$ref": "#/definitions/UserLogin" }
+          }
+        ],
+        "responses": { "200": { "description": "Token returned" } }
+      }
+    },
+    "/tasks": {
+      "get": {
+        "summary": "Get tasks",
+        "responses": { "200": { "description": "List of tasks" } }
+      },
+      "post": {
+        "summary": "Create task",
+        "responses": { "201": { "description": "Task created" } }
+      }
+    },
+    "/tasks/{id}": {
+      "put": {
+        "summary": "Update task",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "type": "integer" }
+        ],
+        "responses": { "200": { "description": "Updated task" } }
+      },
+      "delete": {
+        "summary": "Delete task",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "type": "integer" }
+        ],
+        "responses": { "200": { "description": "Deleted task" } }
+      }
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" }
+      }
+    },
+    "UserLogin": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "password": { "type": "string" }
+      }
+    }
+  }
+}
